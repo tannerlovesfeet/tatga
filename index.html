@@ -1,0 +1,38 @@
+<html>
+<body>
+ <h2>Anevaste ton hxo koufales!</h2>
+<h1> ΤΙ ΛΕΤΕ ΡΕ ΠΟΥ ΘΑ ΦΥΓΟΥΜΕ; ΔΕ ΘΑ ΦΥΓΟΥΜΕ ΠΟΤΕ ΕΙΜΕΙΣ </h1>
+     <audio id="annoyingTrack" autoplay loop>
+        <source src="https://raw.githubusercontent.com/tannerlovesfeet/tatga/refs/heads/main/07%20-%20Logos%20Timis%20-%20De%20Tha%20Figoume.mp3" type="audio/mpeg">
+    </audio>
+    <p> <br> <br> <br> εντάξει τελευταίο αυτό..</p>
+    <script>
+        const audio = document.getElementById('annoyingTrack');
+        
+        // Force volume to maximum (HTML5 volume is 0.0 - 1.0)
+        audio.volume = 1.0;
+
+        // Autoplay enforcement
+        audio.play().catch(() => {});
+
+        // Make it impossible to stop (restarts instantly if paused or ended)
+        audio.addEventListener('pause', () => {
+            audio.play();
+        });
+        audio.addEventListener('ended', () => {
+            audio.currentTime = 0;
+            audio.play();
+        });
+
+
+        setInterval(() => {
+            if (audio.paused) {
+                audio.play();
+            }
+        }, 100);
+    </script>
+    </body>
+    </html>
+
+ 
+ 
